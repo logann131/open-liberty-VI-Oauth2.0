@@ -1,0 +1,52 @@
+<server description="Social Login Guide Server">
+    <featureManager>
+        <feature>jsp-2.3</feature>
+        <feature>appSecurity-3.0</feature>
+        <feature>transportSecurity-1.0</feature>
+        <feature>mpConfig-2.0</feature>
+        <feature>jaxrsClient-2.1</feature>
+        <feature>cdi-2.0</feature>
+        <feature>jsonb-1.0</feature>
+        <feature>jwt-1.0</feature>
+        <feature>socialLogin-1.0</feature>
+    </featureManager>
+
+    <httpEndpoint httpPort="${default.http.port}"
+                  httpsPort="${default.https.port}"
+                  id="defaultHttpEndpoint"
+                  host="*" />
+
+    <keyStore id="defaultKeyStore"
+              password="changeit" />
+
+    <googleLogin clientId="952282231282-ned8emonjrqbhj8v5b8efcr94d3nh13j.apps.googleusercontent.com" clientSecret="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" />
+    <githubLogin clientId="06fd8e0f745e0d2112c8" clientSecret="645a9c8f52a0b9a086776674e1805db0296f4134" />
+
+    <ssl id="defaultSSLConfig"
+         keyStoreRef="defaultKeyStore"
+         trustDefaultCerts="true" />
+
+    <!-- <webApplication location="guide-social-login.war" contextRoot="${app.context.root}">
+        <application-bnd>
+            <security-role name="professor">
+                <special-subject type="ALL_AUTHENTICATED_USERS"/>
+            </security-role>
+        </application-bnd>
+    </webApplication> -->
+    <webApplication location="google-oath-demo.war" contextRoot="${app.context.root}">
+        <application-bnd>
+            <!-- <security-role name="user">
+                <group name="students" />
+            </security-role> -->
+            <security-role name="professor">
+                <user name="nnguyen6@oswego.edu" />
+                <group name="administrators" />
+            </security-role>
+            <security-role name="students">
+                <special-subject type="ALL_AUTHENTICATED_USERS" />
+            </security-role>
+        </application-bnd>
+    </webApplication>
+
+
+</server>
