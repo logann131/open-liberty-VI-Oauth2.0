@@ -33,6 +33,10 @@
             </security-role>
         </application-bnd>
     </webApplication> -->
+
+    <security-role>
+        <role-name>techA</role-name>
+    </security-role>
     <webApplication location="google-oath-demo.war" contextRoot="${app.context.root}">
         <application-bnd>
             <!-- <security-role name="user">
@@ -45,6 +49,7 @@
             <security-role name="students">
                 <special-subject type="ALL_AUTHENTICATED_USERS" />
             </security-role>
+            
         </application-bnd>
     </webApplication>
 

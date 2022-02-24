@@ -15,15 +15,9 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <!-- tag::defaultHttpPort[] -->
         <liberty.var.default.http.port>9085</liberty.var.default.http.port>
-        <!-- end::defaultHttpPort[] -->
-        <!-- tag::defaultHttpsPort[] -->
         <liberty.var.default.https.port>9445</liberty.var.default.https.port>
-        <!-- end::defaultHttpsPort[] -->
-        <!-- tag::appContextRoot[] -->
         <liberty.var.app.context.root>api</liberty.var.app.context.root>
-        <!-- end::appContextRoot[] -->
     </properties>
 
     <dependencies>
